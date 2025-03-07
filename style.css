@@ -106,39 +106,45 @@ body {
   body {
     height: 100vh;
   }
+
   .container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 1310px;
-    height: 500px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "conten rated"
+    "cards cards";
+    width: 90%;
+    height: 90%;
+    margin: 0px;
   }
 
   .conten {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
+    grid-area: conten;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
     height: 200px;
-    padding-right: 150px;
-  }
-
-  .conten__h1 {
     padding-right: 50px;
   }
-
-  .rated {
-    width: 50%;
+  
+  .conten__h1 {
+    padding-right: 150px;
   }
-
+  
+  .rated {
+    grid-area: rated;
+    margin: 0px;
+  }
+  
   .cards {
+    grid-area: cards;
     display: flex;
     justify-content: space-between;
-    width: 80%;
 
     .cards__card {
       width: 290px;
       height: 230px;
-      margin: 0px 10px;
     }
   }
 
@@ -151,8 +157,10 @@ body {
 
   .card--middel {
     margin-top: 20px;
+    margin-left: 15px;
   }
   .card--buttom {
+    margin-left: 15px;
     margin-top: 40px;
   }
 }
